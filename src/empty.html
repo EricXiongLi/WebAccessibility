@@ -12,95 +12,111 @@
 </head>
 
 <body class="d-flex flex-column bg-light">
-    <div class="container-fluid d-none d-lg-block my-4 header">
+    <!-- xc_E2_Page regions: use <header> tag to mark the header seciton -->
+    <header class="container-fluid d-none d-lg-block my-4 header">
         <div class="container">
             <div class="row no-gutters">
                 <div class="col-8 media">
-                    <img class="align-self-center mr-3 rounded-right logo" src="./img/logo.jpg">
+                    <!-- xc_E5_Informative images: add alt attribute to improve web accessibility -->
+                    <img class="align-self-center mr-3 rounded-right logo" src="./img/logo.jpg" alt="Lorem Ipsum Institute of Technology">
                     <div class="media-body align-self-center">
-                        <div class="mb-0 title">Lorem Ipsum
+                        <!-- xc_E3_Headings: use <h1> (main heading) to make the hierarchy more clear -->
+                        <h1 class="mb-0 title">Lorem Ipsum
                             <br>Institute of Technology
-                        </div>
+                        </h1>
                     </div>
                 </div>
                 <div class="col-4">
                     <div class="btn-toolbar justify-content-end">
                         <div class="btn-group btn-group-sm">
-                            <button class="btn btn-dark font-increase-button" id="font-increase-button">A+</button>
-                            <button class="btn btn-dark font-decrease-button" id="font-decrease-button">A-</button>
+                            <!-- xc_E2_Accessible font size: add aria-label -->
+                            <button class="btn btn-dark font-increase-button" id="font-increase-button" aria-label="Increase font size">A+</button>
+                            <button class="btn btn-dark font-decrease-button" id="font-decrease-button" aria-label="Decrease font size">A-</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </header>
 
-    <div class="container-fluid bg-dark nav">
+    <!-- xc_E2_Page regions: use <nav> tag to mark the navigation section -->
+    <nav class="container-fluid bg-dark nav">
         <div class="container">
             <div class="navbar navbar-dark bg-dark navbar-expand-lg px-0">
                 <div class="navbar-brand d-lg-none">
-                    <img class="rounded-right" src="./img/logo.jpg" width="40" height="40">
+                    <!-- xc_E5_Informative images: add alt attribute to improve web accessibility -->
+                    <img class="rounded-right" src="./img/logo.jpg" width="40" height="40" alt="Lorem Ipsum Institute of Technology">
                 </div>
-                <button class="navbar-toggler" type="button">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-bar-content" aria-controls="nav-bar-content" aria-expanded="false" aria-label="Toggle navigation" aria-haspopup="true">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="nav-bar-content">
-                    <div class="navbar-nav mr-auto">
-                        <div class="nav-item">
+                    <!-- xc_E3_Menu structure: use <ul> and <li> tag to make the menu structure more clear -->
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
                             <a class="nav-link" href="./">Homepage</a>
-                        </div>
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-faculties">Faculties</a>
-                            <div class="dropdown-menu">
-                                <div>
-                                    <a class="dropdown-item" href="./empty.html?title=Applied+sciences">Applied sciences</a>
-                                </div>
-                                <div>
-                                    <a class="dropdown-item" href="./empty.html?title=Architecture+%26+planning">Architecture &amp; planning</a>
-                                </div>
-                                <div>
-                                    <a class="dropdown-item" href="./empty.html?title=Construction+%26+environment">Construction &amp; environment</a>
-                                </div>
-                                <div>
-                                    <a class="dropdown-item" href="./empty.html?title=Engineering">Engineering</a>
-                                </div>
-                                <div>
-                                    <a class="dropdown-item" href="./empty.html?title=Health+%26+social+sciences">Health &amp; social sciences</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-education">Education &amp; research</a>
-                            <div class="dropdown-menu">
-                                <div>
-                                    <a class="dropdown-item" href="./empty.html?title=Bachelor">Bachelor</a>
-                                </div>
-                                <div>
-                                    <a class="dropdown-item" href="./empty.html?title=Master">Master</a>
-                                </div>
-                                <div>
-                                    <a class="dropdown-item" href="./empty.html?title=Continuing+education">Continuing education</a>
-                                </div>
-                                <div>
-                                    <a class="dropdown-item" href="./empty.html?title=Doctorate">Doctorate</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-industry">Industry &amp; partners</a>
-                            <div class="dropdown-menu">
-                                <div>
-                                    <a class="dropdown-item" href="./empty.html?title=Public+relations">Public relations</a>
-                                </div>
-                                <div>
-                                    <a class="dropdown-item" href="./empty.html?title=Commercialization">Commercialization</a>
-                                </div>
-                                <div>
-                                    <a class="dropdown-item" href="./empty.html?title=Sponsors+%26+partners">Sponsors &amp; partners</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <!-- xc_E3_Drop-down menu: add aria-haspopup and aria-expanded attribute to the menu item to indicate when a sub-menu is expanded or collapsed -->
+                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-faculties" aria-haspopup="true" aria-expanded="false">Faculties</a>
+                            <!-- xc: use attribute aria-labelledby to describe the purpose of the element -->
+                            <ul class="dropdown-menu" aria-labelledby="nav-bar-faculties">
+                                <!-- xc_E3_Drop-down menu: use the aria-label attribute to provide a descriptive label for the sub-menu item -->
+                                <li>
+                                    <a class="dropdown-item" href="./empty.html?title=Applied+sciences" role="menuitem" aria-label="Applied sciences">Applied sciences</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="./empty.html?title=Architecture+%26+planning" role="menuitem" aria-label="Architecture & planning">Architecture &amp; planning</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="./empty.html?title=Construction+%26+environment" role="menuitem" aria-label="Construction & environment">Construction &amp; environment</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="./empty.html?title=Engineering" role="menuitem" aria-label="Engineering">Engineering</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="./empty.html?title=Health+%26+social+sciences" role="menuitem" aria-label="Health & social sciences">Health &amp; social sciences</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <!-- xc_E3_Drop-down menu: add aria-haspopup and aria-expanded attribute to the menu item to indicate when a sub-menu is expanded or collapsed -->
+                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-education" aria-haspopup="true" aria-expanded="false">Education &amp; research</a>
+                            <!-- xc: use attribute aria-labelledby to describe the purpose of the element -->
+                            <ul class="dropdown-menu" aria-labelledby="nav-bar-education">
+                                 <!-- xc_E3_Drop-down menu: use the aria-label attribute to provide a descriptive label for the sub-menu item -->
+                                <li>
+                                    <a class="dropdown-item" href="./empty.html?title=Bachelor" role="menuitem" aria-label="Bachelor">Bachelor</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="./empty.html?title=Master" role="menuitem" aria-label="Master">Master</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="./empty.html?title=Continuing+education" role="menuitem" aria-label="Continuing education">Continuing education</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="./empty.html?title=Doctorate" role="menuitem" aria-label="Doctorate">Doctorate</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <!-- xc_E3_Drop-down menu: add aria-haspopup and aria-expanded attribute to the menu item to indicate when a sub-menu is expanded or collapsed -->
+                            <a class="nav-link dropdown-toggle" href="#" id="nav-bar-industry" aria-haspopup="true" aria-expanded="false">Industry &amp; partners</a>
+                            <!-- xc: use attribute aria-labelledby to describe the purpose of the element -->
+                            <ul class="dropdown-menu" aria-labelledby="nav-bar-industry">
+                                 <!-- xc_E3_Drop-down menu: use the aria-label attribute to provide a descriptive label for the sub-menu item -->
+                                <li>
+                                    <a class="dropdown-item" href="./empty.html?title=Public+relations" role="menuitem" aria-label="Public relations">Public relations</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="./empty.html?title=Commercialization" role="menuitem" aria-label="Commercialization">Commercialization</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="./empty.html?title=Sponsors+%26+partners" role="menuitem" aria-label="Sponsors & partners">Sponsors &amp; partners</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                     <div class="navbar-nav">
                         <div class="nav-item">
                             <a class="nav-link" href="./login.html">Login</a>
@@ -111,21 +127,23 @@
             <div class="d-lg-none">
                 <div class="btn-toolbar justify-content-end">
                     <div class="btn-group btn-group-sm">
-                        <button class="btn btn-dark text-white font-increase-button" id="font-increase-button-1">A+</button>
-                        <button class="btn btn-dark text-white font-decrease-button" id="font-decrease-button-1">A-</button>
+                        <!-- xc_E2_Accessible font size: add aria-label -->
+                        <button class="btn btn-dark text-white font-increase-button" id="font-increase-button-1" aria-label="Increase font size">A+</button>
+                        <button class="btn btn-dark text-white font-decrease-button" id="font-decrease-button-1" aria-label="Decrease font size">A-</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </nav>
 
-    <div class="container mt-4 text-center main" id="main">
-        <h6 class="text-primary py-4 mb-4 title" id="title-placeholder">Loading...</h6>
-        <p class="text-secondary" id="text-placeholder"></p>
-    </div>
+    <!-- xc_E2_Page regions: use <main> tag to mark the main seciton -->
+    <mian class="container mt-4 text-center main" id="main">
+        <h2 class="text-primary py-4 mb-4 title" id="title-placeholder">Loading...</h2>
+        <p class="article-info" id="text-placeholder"></p>
+    </mian>
 
-
-    <div class="container-fluid bg-dark mt-4 footer">
+    <!-- xc_E2_Page regions: use <footer> tag to mark the footer seciton -->
+    <footer class="container-fluid bg-dark mt-4 footer">
         <div class="container text-center py-3">
             <div class="row justify-content-around">
                 <a class="col-12 col-md mr-3 text-white" href="./empty.html?title=About">About</a>
@@ -135,7 +153,7 @@
                 <a class="col-12 col-md mr-3 text-white" href="./empty.html?title=Privacy+policy">Privacy policy</a>
             </div>
         </div>
-    </div>
+    </footer>
 
     <script type="text/javascript" src="./js/jquery.js"></script>
     <script type="text/javascript" src="./js/popper.js"></script>

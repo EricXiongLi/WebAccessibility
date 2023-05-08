@@ -10,11 +10,13 @@ html {
 body a,
 body div,
 body p {
-    color: #dfdfdf
+    /* xc_E2_Contrast ratio: change the color of text */
+    color: #4b6660;
 }
 
 body a:hover {
-    color: #cdcdcd
+    /* xc_E2_Contrast ratio: change the hover color of <a> tag */
+    color: #4b8a7d;
 }
 
 .title {
@@ -33,7 +35,9 @@ body a:hover {
 
 .header .title {
     font-size: 1.5rem;
-    line-height: 1.8rem
+    line-height: 1.8rem;
+    /* xc_E2_Contrast ratio: change the color of website title */
+    color: #4b6660;
 }
 
 .header .font-increase-button,
@@ -44,6 +48,17 @@ body a:hover {
 .header .font-decrease-button,
 .nav .font-decrease-button {
     font-size: .6rem
+}
+
+/* xc: add arrow or chevron icons to make the link more apparent */
+.material-icons {
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+/* xc_E2_Contrast ratio: change the color of article description in News&Events */
+.article-info {
+    color: #6E706F;
 }
 
 .footer,
