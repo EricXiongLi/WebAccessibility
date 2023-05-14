@@ -112,4 +112,49 @@ menus.forEach(function(menu) {
 });
 
 
+// xc_E3_Menu keyboard interaction (1): Opened sub-menu gets closed automatically when the user presses the ESC key.
+// After closing, the menu header would be focused
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    e.preventDefault();
 
+    var openSubmenu = document.querySelector('.dropdown-menu.show');
+    if (openSubmenu) {
+      // Close the sub-menu
+      openSubmenu.classList.remove('show');
+
+      // Update the aria-expanded attribute of the menu item
+      menuHeader = openSubmenu.getAttribute("aria-labelledby")
+      document.getElementById(menuHeader).setAttribute('aria-expanded', "false");
+      
+      // Focus on the parent menu item
+      openSubmenu.parentElement.querySelector('.nav-link').focus();
+    }
+  }
+});
+
+
+// xc_E3_Menu keyboard interaction (2): The menu items can also be activated by pressing the SPACE key in addition to ENTER key
+const menuItems = document.querySelectorAll('.nav-link');
+menuItems.forEach( function(item) {
+  item.addEventListener('keydown', function(e) {
+    if (e.key === ' ') {
+      e.preventDefault();
+      item.click();
+      item.setAttribute("aria-expanded", "true")
+    }
+  });
+});
+
+
+// xc_E3_Menu keyboard interaction (3): When navigating outside an open menu with TAB, the now inactive menu would be closed as well
+const dropdown_items = document.querySelectorAll(".dropdown-menu")
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Tab') {
+    dropdown_items.forEach((item) => {
+      if (item.classList.contains('show') && !item.contains(document.activeElement)) {
+        item.classList.remove('show');
+      }
+    });
+  }
+});
