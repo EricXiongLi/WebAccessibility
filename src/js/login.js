@@ -29,6 +29,7 @@ function removeValidation(element) {
  * Validate the login form and try to log the user in
  * @param {object} event - The DOM event
  */
+// xc_E4_Form input validation: update error messages
 function login(event) {
     event.preventDefault();
     event.stopPropagation();
@@ -41,15 +42,18 @@ function login(event) {
     } else if (email.validity.valueMissing) {
         setInvalid(email);
         hasError = true;
+        document.getElementById('login-email-error').innerHTML = 'Email can not be empty';
     } else {
         setInvalid(email);
         hasError = true;
+        document.getElementById('login-email-error').innerHTML = 'Email should be in correct form';
     }
 
     var password = document.getElementById('login-password-control');
     if (password.value.trim().length == 0) {
         setInvalid(password);
         hasError = true;
+        document.getElementById('login-password-error').innerHTML = 'Password can not be empty';
     } else {
         setValid(password);
     }
@@ -96,6 +100,7 @@ function forgot(event) {
  * Validate the login form and try to register the new user
  * @param {object} event - The DOM event
  */
+// xc_E4_Form input validation: update error messages
 function register(event) {
     event.preventDefault();
     event.stopPropagation();
@@ -106,6 +111,7 @@ function register(event) {
     if (firstName.value.trim().length == 0) {
         setInvalid(firstName);
         hasError = true;
+        document.getElementById('register-first-name-error').innerHTML = 'First name can not be empty'
     } else if (firstName.validity.valid) {
         setValid(firstName);
     }
@@ -114,6 +120,7 @@ function register(event) {
     if (lastName.value.trim().length == 0) {
         setInvalid(lastName);
         hasError = true;
+        document.getElementById('register-last-name-error').innerHTML = 'Last name can not be empty'
     } else if (lastName.validity.valid) {
         setValid(lastName);
     }
@@ -124,9 +131,11 @@ function register(event) {
     } else if (email.validity.valueMissing) {
         setInvalid(email);
         hasError = true;
+        document.getElementById('register-email-error').innerHTML = 'Email can not be empty'
     } else {
         setInvalid(email);
         hasError = true;
+        document.getElementById('register-email-error').innerHTML = 'Email should be in the correct form'
     }
 
     var password = document.getElementById('register-password-control');
@@ -134,15 +143,19 @@ function register(event) {
     if (passwordValue.length < 8) {
         setInvalid(password);
         hasError = true;
+        document.getElementById('register-password-error').innerHTML = 'Password length should not be less than 8 characters'
     } else if (passwordValue.length > 16) {
         setInvalid(password);
         hasError = true;
+        document.getElementById('register-password-error').innerHTML = 'Password length should not be greater than 16 characters'
     } else if (passwordValue.match(/[a-zA-Z]+/) == null) {
         setInvalid(password);
         hasError = true;
+        document.getElementById('register-password-error').innerHTML = 'Password should contain at least one letter'
     } else if (passwordValue.match(/[0-9]+/) == null) {
         setInvalid(password);
         hasError = true;
+        document.getElementById('register-password-error').innerHTML = 'Password should contain at least one number'
     } else {
         setValid(password);
     }
@@ -151,9 +164,11 @@ function register(event) {
     if (programme.validity.valueMissing) {
         setInvalid(programme);
         hasError = true;
+        document.getElementById('register-programme-error').innerHTML = 'Please select a programme'
     } else if (!programme.validity.valid) {
         setInvalid(programme);
         hasError = true;
+        document.getElementById('register-programme-error').innerHTML = 'The programme is invalid'
     } else {
         setValid(programme);
     }

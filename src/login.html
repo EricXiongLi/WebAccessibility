@@ -149,8 +149,9 @@
             <div class="col-12 col-md-5 mt-4 login">
                 <!-- xc_E2_Page regions: use <section> tag to mark the Login seciton -->
                 <section class="p-4 mr-md-3 bg-white">
-                    <div class="text-primary mb-4 title">Login</div>
-                    <div class="text-danger mb-4 d-none subtitle" id="login-error">Please correct the error(s)</div>
+                    <h2 class="text-primary mb-4 title">Login</h2>
+                    <!-- xc_E4_Form input validation: use a heading element to notify the existence of errors -->
+                    <h3 class="text-danger mb-4 d-none subtitle" id="login-error" aria-live="assertive">Please correct the error(s)</h3>
                     <ul class="sr-only" id="login-error-list"></ul>
 
                     <!-- xc_E2_Reading order (screen reader): adjust the order of <p> tag and <input> tag -->
@@ -159,15 +160,16 @@
                             <!-- xc_E4_Form control labelling: replace <p> tag with <label> tag -->
                             <label for="login-email-control">Email</label>
                             <!-- xc: delete the style in <input> tag -->
-                            <input class="form-control" id="login-email-control" type="email" placeholder="Email" required>
-                            <small class="invalid-feedback" aria-live="polite">Email should be in correct form</small>
+                            <input class="form-control" id="login-email-control" type="email" placeholder="Email" required aria-required="true">
+                            <!-- xc_E4_Form input validation: the error message is updated using JavaScript -->
+                            <small class="invalid-feedback" id="login-email-error" aria-live="polite"></small>
                         </div>
                         <div class="form-group">
                             <!-- xc_E4_Form control labelling: replace <p> tag with <label> tag -->
                             <label for="login-password-control">Password</label>
                             <!-- xc: delete the style in <input> tag -->
-                            <input class="form-control" id="login-password-control" type="password" placeholder="Password">
-                            <small class="invalid-feedback" aria-live="polite">Password can not be empty</small>
+                            <input class="form-control" id="login-password-control" type="password" placeholder="Password" aria-required="true">
+                            <small id="login-password-error" class="invalid-feedback" aria-live="polite"></small>
                         </div>
                         <div class="form-group">
                             <div class="form-check">
@@ -184,8 +186,9 @@
             <div class="col-12 col-md-7 mt-4 register">
                 <!-- xc_E2_Page regions: use <section> tag to mark the Create new account seciton -->
                 <section class="p-4 bg-white">
-                    <div class="text-primary mb-4 title">Create new account</div>
-                    <div class="text-danger mb-4 d-none subtitle" id="register-error">Please correct the error(s)</div>
+                    <h2 class="text-primary mb-4 title">Create new account</h2>
+                    <!-- xc_E4_Form input validation: use a heading element to notify the existence of errors -->
+                    <h3 class="text-danger mb-4 d-none subtitle" id="register-error" aria-live="assertive">Please correct the error(s)</h3>
                     <ul class="sr-only" id="register-error-list"></ul>
 
                     <form id="register-form" novalidate>
@@ -197,40 +200,40 @@
                                 <div class="form-group col-12 col-lg-6">
                                     <!-- xc_E4_Form control labelling: replace <p> tag with <label> tag -->
                                     <label for="register-first-name-control">First name</label>
-                                    <input class="form-control" type="text" id="register-first-name-control" placeholder="First name" required>
-                                    <small class="invalid-feedback" aria-live="polite">First name can not be empty</small>
+                                    <input class="form-control" type="text" id="register-first-name-control" placeholder="First name" required aria-required="true">
+                                    <small id="register-first-name-error" class="invalid-feedback" aria-live="polite"></small>
                                 </div>
                                 <div class="form-group col-12 col-lg-6">
                                     <!-- xc_E4_Form control labelling: replace <p> tag with <label> tag -->
                                     <label for="register-last-name-control">Last name</label>
-                                    <input class="form-control" type="text" id="register-last-name-control" placeholder="Last name" required>
-                                    <small class="invalid-feedback" aria-live="polite">Last name can not be empty</small>
+                                    <input class="form-control" type="text" id="register-last-name-control" placeholder="Last name" required aria-required="true">
+                                    <small id="register-last-name-error" class="invalid-feedback" aria-live="polite"></small>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <!-- xc_E4_Form control labelling: replace <p> tag with <label> tag -->
                                 <label for="register-email-control">Email</label>
-                                <input class="form-control" id="register-email-control" type="email" placeholder="Email" required>
-                                <small class="invalid-feedback" aria-live="polite">Email should be in the correct form</small>
+                                <input class="form-control" id="register-email-control" type="email" placeholder="Email" required aria-required="true">
+                                <small id="register-email-error" class="invalid-feedback" aria-live="polite"></small>
                             </div>
                             <div class="form-group">
                                 <!-- xc_E4_Form control labelling: replace <p> tag with <label> tag -->
                                 <label for="register-password-control">Password</label>
-                                <input class="form-control" id="register-password-control" type="password" placeholder="Password" required>
-                                <small class="invalid-feedback" aria-live="polite">Password can not be empty</small>
+                                <input class="form-control" id="register-password-control" type="password" placeholder="Password" required aria-required="true">
+                                <small id="register-password-error" class="invalid-feedback" aria-live="polite"></small>
                                 <small id="register-password-help" class="form-text text-muted" aria-live="polite">Your password must be 8-16 characters long and contain both letters and numbers.</small>
                             </div>
                             <div class="form-group">
                                 <!-- xc_E4_Form control labelling: replace <p> tag with <label> tag -->
                                 <label for="register-programme-control">Programme</label>
-                                <select class="form-control" id="register-programme-control" required>
+                                <select class="form-control" id="register-programme-control" required aria-required="true">
                                     <option value="">Please select your education or research programme</option>
                                     <option value="bachelor">Bachelor</option>
                                     <option value="master">Master</option>
                                     <option value="continuing">Continuing education</option>
                                     <option value="doctorate">Doctorate</option>
                                 </select>
-                                <small class="invalid-feedback" aria-live="polite">The programme can not be empty</small>
+                                <small id='register-programme-error' class="invalid-feedback" aria-live="polite"></small>
                             </div>
                         </fieldset>
                         <fieldset class="form-group">
