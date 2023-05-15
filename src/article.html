@@ -12,13 +12,6 @@
 </head>
 
 <body class="d-flex flex-column bg-light">
-
-    <div style="visibility: hidden">
-        <!-- The anchor points to the id of the element --> 
-        <a href="#main" >Skip to main content</a>
-        <a href="#footer">Skip to footer</a>
-    </div>
-
     <!-- xc_E2_Page regions: use <header> tag to mark the header seciton -->
     <header class="container-fluid d-none d-lg-block my-4 header">
         <div class="container" id="top">
@@ -45,6 +38,13 @@
             </div>
         </div>
     </header>
+
+    <!-- xc_E3_Skip links: skip to main content or footer -->
+    <div >
+        <!-- The anchor points to the id of the element --> 
+        <a href="#main" class="skip-link">Skip to main content</a>
+        <a href="#footer" class="skip-link">Skip to footer</a>
+    </div>
 
     <!-- xc_E2_Page regions: use <nav> tag to mark the navigation section -->
     <nav class="container-fluid bg-dark nav">

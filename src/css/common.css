@@ -19,6 +19,23 @@ body a:hover {
     color: #4b8a7d;
 }
 
+/* xc_E3_Skip links: skip to main content or footer */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: 1em;
+    background-color: black;
+    color: white;
+    opacity: 0;
+}
+
+.skip-link:focus {
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+}
+
 .title {
     font-size: 2rem;
     font-weight: 100
